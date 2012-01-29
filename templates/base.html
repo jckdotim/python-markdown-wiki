@@ -1,0 +1,40 @@
+{% if request.is_xhr == False %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ topic.name }}</title>
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+  </head>
+  <body style="padding-top:60px;">
+  <div class="topbar-wrapper" style="z-index: 5;">
+    <div class="topbar" data-dropdown="dropdown" >
+      <div class="topbar-inner">
+        <div class="container">
+          <h3><a href="#">Markdown Wiki</a></h3>
+          <form class="pull-left" action="/" method="GET">
+            <input type="text" name="name" value="{{ topic.name }}" placeholder="Search" />
+          </form>
+        </div>
+      </div><!-- /topbar-inner -->
+    </div><!-- /topbar -->
+  </div><!-- /topbar-wrapper --> 
+  <div class="container">
+    <div class="row">
+      <div class="span16">
+        <div class="page-header">
+          <h1>{{ topic.name }} <small>
+          <a href="{{ url_for('edit', name=topic.name) }}">Modify</a>
+          </small></h1>
+        </div>
+    {% endif %}
+        {% block body %}
+        {{ topic.body|default('', true)|parse_link|safe|markdown }}
+        {% endblock %}
+    {% if request.is_xhr == False %}
+      </div>
+    </div>
+  </div>
+  </body>
+  </html>
+{% endif %}
