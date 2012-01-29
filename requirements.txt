@@ -7,3 +7,4 @@ SQLAlchemy==0.7.5
 Werkzeug==0.8.2
 gunicorn==0.13.4
 wsgiref==0.1.2
+psycopg2==2.4.2
