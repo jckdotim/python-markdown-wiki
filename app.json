@@ -1,6 +1,6 @@
 {
   "name": "Python Markdown Wiki",
-  "description": "TODO: Add a short description about Python Markdown Wiki",
+  "description": "Markdown wiki for Heroku",
   "keywords": [
     "small",
     "sharp",
@@ -10,9 +10,8 @@
     "heroku-postgresql:dev"
   ],
   "env": {
-    "PYTHONUNBUFFERED": "true",
-    "PATH": "bin:/usr/local/bin:/usr/bin:/bin",
-    "LD_LIBRARY_PATH": ".heroku/vendor/lib",
-    "LIBRARY_PATH": ".heroku/vendor/lib"
+  },
+  "scripts": {
+    "postdeploy": "python create_db.py"
   }
 }
