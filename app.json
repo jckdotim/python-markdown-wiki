@@ -7,7 +7,7 @@
     "tool"
   ],
   "addons": [
-    "heroku-postgresql:dev"
+    "heroku-postgresql:hobby-dev"
   ],
   "env": {
   },
