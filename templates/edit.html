@@ -2,13 +2,13 @@
 {% block body %}
 <form action="{{ url_for('topic', name=topic.name) }}" method="POST">
 <fieldset>
-<label for="textarea">Contents</label>
-<div class="input">
-    <textarea name="body" class="xxlarge" id="textarea2" rows="10">{{ topic.body|default('', true) }}</textarea>
+<div class="form-group">
+    <label for="textarea-content">Contents</label>
+    <textarea name="body" class="form-control" id="textarea-content" rows="10">{{ topic.body|default('', true) }}</textarea>
 </div>
 <div class="actions">
-    <input type="submit" class="btn primary large" value="Edit" />
-    <a href="{{ url_for('topic', name=topic.name) }}" class="btn large">Return to topic</a>
+    <input type="submit" class="btn btn-primary btn-lg" value="Edit" />
+    <a href="{{ url_for('topic', name=topic.name) }}" class="btn btn-lg">Return to topic</a>
 </div>
 </fieldset>
 </form>
