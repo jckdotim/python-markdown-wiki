@@ -15,7 +15,6 @@
     $ heroku run python create_db.py
 
 # 제공하는 기능
----
  - [Bootstrap][4]로 디자인
  - [Markdown][3]으로 내용 작성
  - `[[Topic]]` 문법 추가. `[Topic](/Topic)`으로 바꿔줍니다.
