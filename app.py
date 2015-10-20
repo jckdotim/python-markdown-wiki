@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, redirect, url_for, request
-from flaskext.sqlalchemy import SQLAlchemy
-from flaskext.markdown import Markdown
+from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.markdown import Markdown
 import datetime
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///env/local.db")
@@ -26,7 +26,7 @@ class Topic(db.Model):
     def __init__(self, name, body):
         self.name = name
         self.body = body
-    
+
     def __repr__(self):
         return '<Topic {0}>'.format(self.name)
 
@@ -53,7 +53,7 @@ def topic(name):
         topic.body = request.values.get('body')
         db.session.commit()
         return redirect(url_for('topic', name=name))
-       
+
 
 @app.route("/<string:name>/edit")
 def edit(name):
