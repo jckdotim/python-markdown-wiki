@@ -3,16 +3,24 @@ from flask import Flask, render_template, redirect, url_for, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.markdown import Markdown
 import datetime
+
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///env/local.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+    "DATABASE_URL",
+    "sqlite:///env/local.db"
+)
 db = SQLAlchemy(app)
 markdown = Markdown(app)
+
 
 class Topic(db.Model):
     name = db.Column(db.String(32), primary_key=True)
     body = db.Column(db.Text, nullable=True, default=u"")
-    modified_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now())
-    created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now())
+    modified_at = db.Column(db.DateTime, nullable=False,
+                            default=datetime.datetime.now())
+    created_at = db.Column(db.DateTime, nullable=False,
+                           default=datetime.datetime.now())
 
     @classmethod
     def find(cls, name):
@@ -30,12 +38,15 @@ class Topic(db.Model):
     def __repr__(self):
         return '<Topic {0}>'.format(self.name)
 
+
 @app.template_filter('parse_link')
 def parse_link(body):
     import re
     for word in re.findall(r"\[\[([^\]]+)\]\]", body):
-        body = body.replace(u'[[{0}]]'.format(word), u'[{0}](/{0})'.format(word))
+        body = body.replace(u'[[{0}]]'.format(word),
+                            u'[{0}](/{0})'.format(word))
     return body
+
 
 @app.route("/")
 def index():
@@ -43,6 +54,7 @@ def index():
     if name is None:
         name = 'README'
     return redirect(url_for('topic', name=name))
+
 
 @app.route("/<string:name>", methods=["GET", "POST"])
 def topic(name):
@@ -59,6 +71,7 @@ def topic(name):
 def edit(name):
     topic = Topic.find(name)
     return render_template('edit.html', topic=topic)
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
