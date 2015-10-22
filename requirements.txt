@@ -6,7 +6,13 @@ Markdown==2.6.2
 MarkupSafe==0.23
 SQLAlchemy==1.0.8
 Werkzeug==0.10.4
+flake8==2.4.1
 gunicorn==19.3.0
 itsdangerous==0.24
+mccabe==0.3.1
+pep8==1.5.7
 psycopg2==2.6.1
+py==1.4.30
+pyflakes==0.8.1
+pytest==2.8.2
 wsgiref==0.1.2
