@@ -1,4 +1,4 @@
-# Python Markdown Wiki for Heroku
+# Python Markdown Wiki for Heroku [![Build Status](https://travis-ci.org/shinvee/python-markdown-wiki.svg)](https://travis-ci.org/shinvee/python-markdown-wiki)
 
 [Heroku][1]에서 바로 올려서 쓸 수 있는 [Markdown][2] [Wiki][3]가 필요해서 만들어보았습니다.
 
