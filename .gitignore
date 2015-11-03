@@ -3,3 +3,4 @@ syntax:glob
 env
 *.pyc
 test.db
+node_modules
