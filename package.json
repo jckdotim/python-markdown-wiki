@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/shinvee/python-markdown-wiki",
   "devDependencies": {
+    "css-loader": "^0.18.0",
+    "file-loader": "^0.8.4",
+    "style-loader": "^0.13.0",
     "webpack": "^1.12.2"
   }
 }

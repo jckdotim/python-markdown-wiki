@@ -4,3 +4,5 @@ env
 *.pyc
 test.db
 node_modules
+bower_components
+static/bundles/*

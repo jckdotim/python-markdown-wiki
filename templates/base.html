@@ -4,9 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ topic.name }}</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='bundles/bundle.js') }}"></script>
   </head>
   <body style="padding-top:60px;">
     <nav class="navbar navbar-default navbar-fixed-top">

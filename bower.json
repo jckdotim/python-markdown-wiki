@@ -1,0 +1,23 @@
+{
+  "name": "python-markdown-wiki",
+  "description": "Wiki that can use Markdown and supports Heroku.",
+  "main": "index.js",
+  "authors": [
+    "http://github.com/shinvee"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/shinvee/python-markdown-wiki",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "cloudinary": "cloudinary_js#~1.0.25",
+    "bootstrap": "~3.3.5"
+  }
+}
