@@ -21,5 +21,8 @@
     "file-loader": "^0.8.4",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.2"
+  },
+  "scripts": {
+      "postinstall": "./node_modules/bower/bin/bower install"
   }
 }

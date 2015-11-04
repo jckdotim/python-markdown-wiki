@@ -12,7 +12,7 @@
   "env": {
   },
   "scripts": {
-    "postdeploy": "python create_db.py && npm install && bower install && webpack"
+    "postdeploy": "python create_db.py"
   },
   "buildpacks": [
     {
