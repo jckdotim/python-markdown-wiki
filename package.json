@@ -16,7 +16,7 @@
     "url": "https://github.com/shinvee/python-markdown-wiki/issues"
   },
   "homepage": "https://github.com/shinvee/python-markdown-wiki",
-  "devDependencies": {
+  "dependencies": {
     "bower": "^1.6.5",
     "css-loader": "^0.18.0",
     "file-loader": "^0.8.4",
