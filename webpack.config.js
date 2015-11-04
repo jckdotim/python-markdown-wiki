@@ -1,6 +1,5 @@
 var webpack = require("webpack");
 var path = require("path");
-var BowerWebpackPlugin = require('bower-webpack-plugin');
 
 module.exports = {
   entry:   "./entry.js",
