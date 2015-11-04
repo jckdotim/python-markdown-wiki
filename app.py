@@ -1,5 +1,8 @@
 import os
-from flask import Flask, render_template, redirect, url_for, request
+
+from cloudinary.uploader import upload
+from cloudinary.utils import cloudinary_url
+from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.markdown import Markdown
 import datetime
@@ -71,6 +74,15 @@ def topic(name):
 def edit(name):
     topic = Topic.find(name)
     return render_template('edit.html', topic=topic)
+
+
+@app.route('/images', methods=['POST'])
+def upload_image():
+    result = None
+    if 'image' in request.files:
+        upload_result = upload(request.files['image'])
+        result = cloudinary_url(upload_result['public_id'])
+    return jsonify(url=result)
 
 
 if __name__ == "__main__":
