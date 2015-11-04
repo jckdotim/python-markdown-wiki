@@ -4,7 +4,7 @@
   "description": "Wiki that can use Markdown and supports Heroku.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install && webpack"
   },
   "repository": {
     "type": "git",
