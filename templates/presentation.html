@@ -20,8 +20,7 @@
     <textarea id="source">
 {{ topic.body|default('', true)|parse_link|safe }}
     </textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
-    </script>
+    <script src="{{ url_for('static', filename='bundles/bundle.js') }}"></script>
     <script>
       var slideshow = remark.create();
     </script>
