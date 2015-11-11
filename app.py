@@ -70,6 +70,12 @@ def topic(name):
         return redirect(url_for('topic', name=name))
 
 
+@app.route("/<string:name>/presentation")
+def presentation(name):
+    topic = Topic.find(name)
+    return render_template('presentation.html', topic=topic)
+
+
 @app.route("/<string:name>/edit")
 def edit(name):
     topic = Topic.find(name)
