@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <title>{{ topic.name }}</title>
     <script src="{{ url_for('static', filename='bundles/bundle.js') }}"></script>
+    <style>
+      @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+      @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+      * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif; }
+    </style>
   </head>
   <body style="padding-top:60px;">
     <nav class="navbar navbar-default navbar-fixed-top">
