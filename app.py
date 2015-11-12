@@ -5,6 +5,7 @@ from cloudinary.utils import cloudinary_url
 from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.markdown import Markdown
+from sqlalchemy import select
 import datetime
 
 
@@ -24,6 +25,12 @@ class Topic(db.Model):
                             default=datetime.datetime.now())
     created_at = db.Column(db.DateTime, nullable=False,
                            default=datetime.datetime.now())
+
+    @property
+    def backlinks(self):
+        return Topic.query.filter(
+            Topic.body.like('%[[{}]]%'.format(self.name))
+        )
 
     @classmethod
     def find(cls, name):
