@@ -33,9 +33,11 @@
           <div class="page-header">
             <h1>{{ topic.name }} <small>
             <div class="pull-right">
+              {% block submenu %}
               <a class="btn btn-default" href="{{ url_for('edit', name=topic.name) }}">Modify</a>
               <a class="btn btn-default" href="{{ url_for('backlinks', name=topic.name) }}">Backlinks</a>
               <a class="btn btn-default" href="{{ url_for('presentation', name=topic.name) }}">Presentation</a>
+              {% endblock %}
             </div>
             </small></h1>
           </div>

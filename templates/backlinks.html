@@ -10,3 +10,6 @@
   {% endfor %}
 </ul>
 {% endblock %}
+{% block submenu %}
+<a class="btn btn-default" href="{{ url_for('topic', name=topic.name) }}">Back</a>
+{% endblock %}
