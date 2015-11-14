@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+<ul>
+  {% for backlink in topic.backlinks %}
+  <li>
+    <a href="{{ url_for('.topic', name=backlink.name) }}">
+      {{ backlink.name }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

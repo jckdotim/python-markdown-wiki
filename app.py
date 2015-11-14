@@ -76,6 +76,12 @@ def topic(name):
         return redirect(url_for('topic', name=name))
 
 
+@app.route("/<string:name>/backlinks")
+def backlinks(name):
+    topic = Topic.find(name)
+    return render_template('backlinks.html', topic=topic)
+
+
 @app.route("/<string:name>/presentation")
 def presentation(name):
     topic = Topic.find(name)

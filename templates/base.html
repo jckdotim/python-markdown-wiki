@@ -34,6 +34,7 @@
             <h1>{{ topic.name }} <small>
             <div class="pull-right">
               <a class="btn btn-default" href="{{ url_for('edit', name=topic.name) }}">Modify</a>
+              <a class="btn btn-default" href="{{ url_for('backlinks', name=topic.name) }}">Backlinks</a>
               <a class="btn btn-default" href="{{ url_for('presentation', name=topic.name) }}">Presentation</a>
             </div>
             </small></h1>
