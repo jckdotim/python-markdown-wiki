@@ -103,6 +103,11 @@ def upload_image():
     return jsonify(url=result)
 
 
+@app.template_filter('env')
+def env(s):
+    return os.environ.get(s)
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.debug = True
