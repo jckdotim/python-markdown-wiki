@@ -5,6 +5,7 @@ from cloudinary.utils import cloudinary_url
 from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.markdown import Markdown
+from werkzeug.routing import BaseConverter
 import datetime
 
 
@@ -46,6 +47,17 @@ class Topic(db.Model):
 
     def __repr__(self):
         return '<Topic {0}>'.format(self.name)
+
+
+class TopicConverter(BaseConverter):
+    def to_python(self, value):
+        return Topic.find(value)
+
+    def to_url(self, value):
+        return value.name
+
+
+app.url_map.converters['Topic'] = TopicConverter
 
 
 @app.template_filter('parse_link')
