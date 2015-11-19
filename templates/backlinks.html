@@ -3,7 +3,7 @@
 <ul>
   {% for backlink in topic.backlinks %}
   <li>
-    <a href="{{ url_for('.topic', name=backlink.name) }}">
+    <a href="{{ url_for('.topic', topic=backlink) }}">
       {{ backlink.name }}
     </a>
   </li>
@@ -11,5 +11,5 @@
 </ul>
 {% endblock %}
 {% block submenu %}
-<a class="btn btn-default" href="{{ url_for('topic', name=topic.name) }}">Back</a>
+<a class="btn btn-default" href="{{ url_for('topic', topic=topic) }}">Back</a>
 {% endblock %}

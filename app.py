@@ -71,38 +71,31 @@ def parse_link(body):
 
 @app.route("/")
 def index():
-    name = request.values.get('name')
-    if name is None:
-        name = 'README'
-    return redirect(url_for('topic', name=name))
+    return redirect(url_for('topic', topic=Topic.find('README')))
 
 
-@app.route("/<string:name>", methods=["GET", "POST"])
-def topic(name):
-    topic = Topic.find(name)
+@app.route("/<Topic:topic>", methods=["GET", "POST"])
+def topic(topic):
     if request.method == 'GET':
         return render_template('base.html', topic=topic)
     else:
         topic.body = request.values.get('body')
         db.session.commit()
-        return redirect(url_for('topic', name=name))
+        return redirect(url_for('topic', topic=topic))
 
 
-@app.route("/<string:name>/backlinks")
-def backlinks(name):
-    topic = Topic.find(name)
+@app.route("/<Topic:topic>/backlinks")
+def backlinks(topic):
     return render_template('backlinks.html', topic=topic)
 
 
-@app.route("/<string:name>/presentation")
-def presentation(name):
-    topic = Topic.find(name)
+@app.route("/<Topic:topic>/presentation")
+def presentation(topic):
     return render_template('presentation.html', topic=topic)
 
 
-@app.route("/<string:name>/edit")
-def edit(name):
-    topic = Topic.find(name)
+@app.route("/<Topic:topic>/edit")
+def edit(topic):
     return render_template('edit.html', topic=topic)
 
 

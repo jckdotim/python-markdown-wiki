@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-<form action="{{ url_for('topic', name=topic.name) }}" method="POST">
+<form action="{{ url_for('topic', topic=topic) }}" method="POST">
 <fieldset>
 <div class="form-group">
     <label for="textarea-content">Contents</label>
@@ -8,11 +8,11 @@
 </div>
 <div class="actions">
     <input type="submit" class="btn btn-primary btn-lg" value="Edit" />
-    <a href="{{ url_for('topic', name=topic.name) }}" class="btn btn-lg">Return to topic</a>
+    <a href="{{ url_for('topic', topic=topic) }}" class="btn btn-lg">Return to topic</a>
 </div>
 </fieldset>
 </form>
 {% endblock %}
 {% block submenu %}
-<a class="btn btn-default" href="{{ url_for('topic', name=topic.name) }}">Back</a>
+<a class="btn btn-default" href="{{ url_for('topic', topic=topic) }}">Back</a>
 {% endblock %}
