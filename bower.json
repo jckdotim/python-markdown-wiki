@@ -19,6 +19,7 @@
   "dependencies": {
     "cloudinary": "cloudinary_js#~1.0.25",
     "bootstrap": "~3.3.5",
-    "remark": "~0.12.0"
+    "remark": "~0.12.0",
+    "inline-attachment": "~2.0.2"
   }
 }
