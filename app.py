@@ -102,10 +102,10 @@ def edit(topic):
 @app.route('/images', methods=['POST'])
 def upload_image():
     result = None
-    if 'image' in request.files:
-        upload_result = upload(request.files['image'])
-        result = cloudinary_url(upload_result['public_id'])
-    return jsonify(url=result)
+    if 'file' in request.files:
+        upload_result = upload(request.files['file'])
+        result = cloudinary_url(upload_result['public_id'])[0]
+    return jsonify(filename=result)
 
 
 @app.template_filter('env')
