@@ -36,17 +36,35 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="page-header">
-            <h1>{{ topic.name }} <small>
+          <h1>{{ topic.name }}
             <div class="pull-right">
               {% block submenu %}
               <a class="btn btn-default" href="{{ url_for('edit', topic=topic) }}">Edit</a>
-              <a class="btn btn-default" href="{{ url_for('backlinks', topic=topic) }}">Backlinks</a>
-              <a class="btn btn-default" href="{{ url_for('presentation', topic=topic) }}">Presentation</a>
               {% endblock %}
             </div>
-            </small></h1>
-          </div>
+          </h1>
+        </div>
+      </div>
+      {% block nav %}
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs">
+            {% set nav_items = [
+              { 'title': 'Contents', 'url': url_for('topic', topic=topic) },
+              { 'title': 'Backlinks', 'url': url_for('backlinks', topic=topic) },
+              { 'title': 'Keynote', 'url': url_for('keynote', topic=topic) },
+            ] %}
+            {% for nav in nav_items -%}
+              <li role="presentation" {% if request.path == nav['url'] %}class="active"{% endif %}>
+                <a href="{{ nav['url'] }}">{{ nav['title'] }}</a>
+              </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endblock %}
+      <div class="row">
+        <div class="col-md-12">
           {% endif %}
               {% block body %}
               {{ topic.body|default('', true)|parse_link|safe|markdown }}

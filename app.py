@@ -89,9 +89,9 @@ def backlinks(topic):
     return render_template('backlinks.html', topic=topic)
 
 
-@app.route("/<Topic:topic>/presentation")
-def presentation(topic):
-    return render_template('presentation.html', topic=topic)
+@app.route("/<Topic:topic>/keynote")
+def keynote(topic):
+    return render_template('keynote.html', topic=topic)
 
 
 @app.route("/<Topic:topic>/edit")
