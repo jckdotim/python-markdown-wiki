@@ -1,4 +1,5 @@
 from app import parse_link, Topic
+from flask import url_for
 
 
 def test_parse_link():
@@ -25,3 +26,24 @@ def test_backlinks(fx_session):
     fx_session.commit()
     assert foo.backlinks.count() == 1
     assert foo.backlinks[0] == bar
+
+
+def test_redirect_to_readme(fx_app_client):
+    with fx_app_client as app:
+        assert app.get('/').location == url_for(
+            'topic',
+            topic=Topic.find('README'),
+            _external=True
+        )
+
+
+def test_200(fx_app_client):
+    urls = [
+        '/README',
+        '/README/backlinks',
+        '/README/edit',
+        '/README/keynote'
+    ]
+    with fx_app_client as app:
+        for url in urls:
+            assert app.get(url).status_code == 200
