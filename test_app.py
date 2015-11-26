@@ -1,3 +1,5 @@
+import uuid
+
 from app import parse_link, Topic
 from flask import url_for
 
@@ -47,3 +49,12 @@ def test_200(fx_app_client):
     with fx_app_client as app:
         for url in urls:
             assert app.get(url).status_code == 200
+
+
+def test_edit_topic(fx_app_client):
+    with fx_app_client as app:
+        test_body = str(uuid.uuid4())
+        rv = app.post('/README', data=dict(
+            body=test_body
+        ), follow_redirects=True)
+        assert test_body in str(rv.data)
