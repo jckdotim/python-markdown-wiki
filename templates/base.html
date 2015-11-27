@@ -24,9 +24,9 @@
         <div class="pull-right">
           <form class="navbar-form" action="/" method="GET" role="search" style="border: 0;">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search" value="{{ topic.name }}">
+              <input type="text" name="topic" class="form-control" placeholder="Search" value="{{ topic.name }}">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go</button>
+                <input class="btn btn-default" type="submit" value="Go" />
               </span>
             </div>
           </form>

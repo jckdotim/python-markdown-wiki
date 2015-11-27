@@ -71,6 +71,10 @@ def parse_link(body):
 
 @app.route("/")
 def index():
+    if 'topic' in request.args:
+        return redirect(
+            url_for('topic', topic=Topic.find(request.args['topic']))
+        )
     return redirect(url_for('topic', topic=Topic.find('README')))
 
 
