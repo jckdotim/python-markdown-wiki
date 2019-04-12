@@ -1,14 +1,14 @@
-Flask==0.10.1
+Flask==0.12.3
 Flask-Markdown==0.3
 Flask-SQLAlchemy==2.0
-Jinja2==2.8
+Jinja2==2.8.1
 Markdown==2.6.2
 MarkupSafe==0.23
 SQLAlchemy==1.0.8
 Werkzeug==0.10.4
 cloudinary==1.2.0
 flake8==2.4.1
-gunicorn==19.3.0
+gunicorn==19.5.0
 itsdangerous==0.24
 mccabe==0.3.1
 pep8==1.5.7
