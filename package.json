@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shinvee/python-markdown-wiki.git"
+    "url": "https://github.com/jckdotim/python-markdown-wiki.git"
   },
-  "author": "http://github.com/shinvee",
+  "author": "https://github.com/jckdotim",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shinvee/python-markdown-wiki/issues"
+    "url": "https://github.com/jckdotim/python-markdown-wiki/issues"
   },
-  "homepage": "https://github.com/shinvee/python-markdown-wiki",
+  "homepage": "https://github.com/jckdotim/python-markdown-wiki",
   "dependencies": {
     "bower": "^1.6.5",
     "css-loader": "^0.18.0",
