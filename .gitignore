@@ -1,6 +1,8 @@
 syntax:glob
 
 env
+.envrc
+.direnv
 *.pyc
 test.db
 node_modules
