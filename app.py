@@ -12,7 +12,7 @@ import datetime
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     "DATABASE_URL",
-    "sqlite:///env/local.db"
+    "sqlite:////tmp/python_markdown_wiki_local.db"
 )
 db = SQLAlchemy(app)
 markdown = Markdown(app)
