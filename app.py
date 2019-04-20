@@ -3,8 +3,8 @@ import os
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 from flask import Flask, render_template, redirect, url_for, request, jsonify
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.markdown import Markdown
+from flask_sqlalchemy import SQLAlchemy
+from flask_gfm import Markdown
 from werkzeug.routing import BaseConverter
 import datetime
 
