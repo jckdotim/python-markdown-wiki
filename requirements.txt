@@ -13,6 +13,6 @@ itsdangerous==1.1
 mccabe==0.6.1
 pep8==1.7.1
 psycopg2==2.8.2
-py==1.4.30
+py==1.8.0
 pyflakes==0.8.1
 pytest==2.8.2
