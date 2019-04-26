@@ -9,7 +9,7 @@ Werkzeug==0.15.2
 cloudinary==1.15.0
 flake8==3.7.7
 gunicorn==19.9.0
-itsdangerous==0.24
+itsdangerous==1.1
 mccabe==0.3.1
 pep8==1.5.7
 psycopg2==2.8.1
