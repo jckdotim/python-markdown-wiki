@@ -1,5 +1,6 @@
 language: python
 install:
+  - pip freeze | xargs pip uninstall -y
   - pip install -r requirements.txt
   - pip install coveralls
 before_script:
