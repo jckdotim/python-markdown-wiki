@@ -8,18 +8,15 @@ module.exports = {
     filename: "bundle.js"
   },
   module:  {
-    loaders: [
-      {test: /\.css$/, loader: "style!css"},
+    rules: [
+      {test: /\.css$/, loader: "style-loader!css-loader"},
       {test: /\.(woff|svg|ttf|eot)([\?]?.*)$/, loader: "file-loader?name=[name].[ext]"}
     ]
   },
   resolve: {
-      root: [path.join(__dirname, "bower_components")]
+      modules: ["bower_components", "node_modules"]
   },
   plugins: [
-    new webpack.ResolverPlugin(
-      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
-    ),
     new webpack.ProvidePlugin({
       $:      "jquery",
       jQuery: "jquery"
