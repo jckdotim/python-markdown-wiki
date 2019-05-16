@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   resolve: {
-      modules: ["bower_components", "node_modules"]
+      modules: ["node_modules"]
   },
   plugins: [
     new webpack.ProvidePlugin({
