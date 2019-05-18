@@ -2,6 +2,7 @@ syntax:glob
 
 env
 .envrc
+.coverage
 .direnv
 *.pyc
 test.db
