@@ -16,17 +16,17 @@
     </style>
   </head>
   <body style="padding-top:60px;">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-light bg-light fixed-top">
       <div class="container-fluid">
         <div class="navbar-header hidden-xs">
           <a class="navbar-brand" href="{{ url_for('index') }}">Wiki</a>
         </div>
-        <div class="pull-right">
+        <div class="float-right">
           <form class="navbar-form" action="/" method="GET" role="search" style="border: 0;">
             <div class="input-group">
               <input type="text" name="topic" class="form-control" placeholder="Search" value="{{ topic.name }}">
-              <span class="input-group-btn">
-                <input class="btn btn-default" type="submit" value="Go" />
+              <span class="input-group-append">
+                <input class="btn btn-outline-info" type="submit" value="→" />
               </span>
             </div>
           </form>
@@ -37,9 +37,9 @@
       <div class="row">
         <div class="col-md-12">
           <h1>{{ topic.name }}
-            <div class="pull-right">
+            <div class="float-right">
               {% block submenu %}
-              <a class="btn btn-default" href="{{ url_for('edit', topic=topic) }}">Edit</a>
+              <a class="btn btn-outline-primary" href="{{ url_for('edit', topic=topic) }}">Edit</a>
               {% endblock %}
             </div>
           </h1>
@@ -55,8 +55,8 @@
               { 'title': 'Keynote', 'url': url_for('keynote', topic=topic) },
             ] %}
             {% for nav in nav_items -%}
-              <li role="presentation" {% if request.path == nav['url'] %}class="active"{% endif %}>
-                <a href="{{ nav['url'] }}">{{ nav['title'] }}</a>
+              <li role="presentation" class="nav-item">
+                <a class="nav-link {% if request.path == nav['url'] %}active{% endif %}" href="{{ nav['url'] }}">{{ nav['title'] }}</a>
               </li>
             {%- endfor %}
           </ul>
