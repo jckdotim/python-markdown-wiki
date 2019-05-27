@@ -8,13 +8,13 @@ This is an [Wiki][2] that can use [Markdown][3] and supports [Heroku][1].
 
 or
 
-    $ git clone git@github.com:shinvee/python-markdown-wiki.git
+    $ git clone git@github.com:jckdotim/python-markdown-wiki.git
     $ heroku create NAME
     $ git push heroku master
     $ heroku run python create_db.py
 
 # Features
- - [Bootstrap][4] based User Interface
+ - [Bootstrap][4]-based User Interface
  - [Markdown][3] Support
  - `[[Topic]]` will be changed to `[Topic](/Topic)`
 
