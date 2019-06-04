@@ -3,7 +3,6 @@
   <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>{{ topic.name }}</title>
     <script src="{{ url_for('static', filename='bundles/bundle.js') }}"></script>
     <style>
@@ -36,7 +35,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>{{ topic.name }}
+	    <h1>{{ topic.name }}</h1>
             <div class="float-right">
               {% block submenu %}
               <a class="btn btn-outline-primary" href="{{ url_for('edit', topic=topic) }}">Edit</a>
