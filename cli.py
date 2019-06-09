@@ -23,4 +23,3 @@ cli.add_command(dropdb)
 
 if __name__ == '__main__':
     cli()
-
