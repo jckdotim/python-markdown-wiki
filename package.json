@@ -30,6 +30,6 @@
     "webpack": "^4.0.0"
   },
   "devDependencies": {
-    "webpack-cli": "3.3.3"
+    "webpack-cli": "3.3.4"
   }
 }
