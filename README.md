@@ -11,7 +11,7 @@ or
     $ git clone git@github.com:jckdotim/python-markdown-wiki.git
     $ heroku create NAME
     $ git push heroku master
-    $ heroku run python create_db.py
+    $ heroku run python cli.py createdb
 
 # Features
  - [Bootstrap][4]-based User Interface
