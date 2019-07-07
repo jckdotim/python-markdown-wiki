@@ -30,7 +30,7 @@ class Topic(db.Model):
     @property
     def backlinks(self):
         return Topic.query.filter(
-            Topic.body.like('%[[{}]]%'.format(self.name))
+            Topic.body.like(f'%[[{self.name}]]%')
         )
 
     @classmethod
@@ -47,7 +47,7 @@ class Topic(db.Model):
         self.body = body
 
     def __repr__(self):
-        return '<Topic {0}>'.format(self.name)
+        return f'<Topic {self.name}>'
 
 
 class TopicConverter(BaseConverter):
