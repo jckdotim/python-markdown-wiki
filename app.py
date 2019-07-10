@@ -21,7 +21,7 @@ markdown = Markdown(app)
 
 class Topic(db.Model):
     name = db.Column(db.String(32), primary_key=True)
-    body = db.Column(db.Text, nullable=True, default=u"")
+    body = db.Column(db.Text, nullable=True, default='')
     modified_at = db.Column(db.DateTime, nullable=False,
                             default=datetime.datetime.now())
     created_at = db.Column(db.DateTime, nullable=False,
@@ -36,7 +36,7 @@ class Topic(db.Model):
     @classmethod
     def find(cls, name):
         topic = Topic.query.get(name)
-        if topic is None:
+        if not topic:
             topic = Topic(name, None)
             db.session.add(topic)
             db.session.commit()
