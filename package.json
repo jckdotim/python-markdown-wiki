@@ -4,7 +4,8 @@
   "description": "Wiki that can use Markdown and supports Heroku.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "webpack-cli"
+    "dev": "webpack-cli --mode development",
+    "build": "webpack-cli --mode production"
   },
   "repository": {
     "type": "git",
