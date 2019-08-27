@@ -25,7 +25,6 @@
     "inline-attachment": "^2.0.3",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
-    "remark": "^11.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.0.0"
   },
