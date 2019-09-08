@@ -6,7 +6,7 @@ from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_gfm import Markdown
 from werkzeug.routing import BaseConverter
-import datetime
+from sqlalchemy.sql import func
 
 
 app = Flask(__name__)
@@ -23,9 +23,9 @@ class Topic(db.Model):
     name = db.Column(db.String(32), primary_key=True)
     body = db.Column(db.Text, nullable=True, default='')
     modified_at = db.Column(db.DateTime, nullable=False,
-                            default=datetime.datetime.now())
+                            server_default=func.now(), onupdate=func.now())
     created_at = db.Column(db.DateTime, nullable=False,
-                           default=datetime.datetime.now())
+                           server_default=func.now())
 
     @property
     def backlinks(self):
