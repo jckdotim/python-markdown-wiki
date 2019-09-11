@@ -35,9 +35,9 @@ class Topic(db.Model):
 
     @classmethod
     def find(cls, name):
-        topic = Topic.query.get(name)
+        topic = cls.query.get(name)
         if not topic:
-            topic = Topic(name, None)
+            topic = cls(name, None)
             db.session.add(topic)
             db.session.commit()
         return topic
