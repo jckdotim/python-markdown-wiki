@@ -1,4 +1,6 @@
-on: [pull_request]
+on: 
+  pull_request:
+    types: [assigned, opened, synchronize, reopened, edited]
 name: "Set status on pull_request"
 
 jobs:
