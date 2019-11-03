@@ -4,9 +4,12 @@
 This is an [Wiki][2] that can use [Markdown][3] and supports [Heroku][1].
 
 # How to Use
+
+## Use button
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-or
+## Deploy using CLI
 
     $ git clone git@github.com:jckdotim/python-markdown-wiki.git
     $ heroku create NAME
