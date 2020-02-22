@@ -3,6 +3,7 @@ var path = require("path");
 
 module.exports = {
   entry:   "./entry.js",
+  mode:    "production",
   output:  {
     path:     __dirname + "/static/bundles",
     filename: "bundle.js"
