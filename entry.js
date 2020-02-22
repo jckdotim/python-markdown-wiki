@@ -1,7 +1,6 @@
 var $ = require('jquery')
 require('bootstrap')
 require('bootstrap/dist/css/bootstrap.css')
-require('remark')
 require('inline-attachment/src/inline-attachment')
 require('inline-attachment/src/jquery.inline-attachment')
 
