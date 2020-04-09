@@ -22,12 +22,15 @@
     "cloudinary": "^1.14.0",
     "css-loader": "^3.0.0",
     "file-loader": "^6.0.0",
+    "github-markdown-css": "^4.0.0",
     "inline-attachment": "^2.0.3",
     "jquery": "^3.4.1",
+    "kind-of": ">=6.0.3",
+    "minimist": ">=1.2.3",
     "popper.js": "^1.15.0",
     "serialize-javascript": ">=2.1.1",
     "style-loader": "^1.0.0",
-    "webpack": "^4.41.6"
+    "webpack": "^4.42.1"
   },
   "devDependencies": {
     "webpack-cli": "3.3.11"

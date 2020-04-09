@@ -62,7 +62,7 @@
       </div>
       {% endblock %}
       <div class="row mt-3">
-        <div class="col-md-12">
+        <div class="col-md-12 markdown-body">
           {% endif %}
               {% block body %}
               {{ topic.body|default('', true)|parse_link|safe|markdown }}
