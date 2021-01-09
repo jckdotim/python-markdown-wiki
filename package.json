@@ -24,7 +24,7 @@
     "file-loader": "^6.0.0",
     "github-markdown-css": "^4.0.0",
     "inline-attachment": "^2.0.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "kind-of": ">=6.0.3",
     "minimist": ">=1.2.3",
     "popper.js": "^1.15.0",
