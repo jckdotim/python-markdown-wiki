@@ -2,7 +2,7 @@ Click==7.0
 Flask==1.1.2
 Flask-SQLAlchemy==2.4.4
 Flask-GFM==0.1.1
-Jinja2==2.11.1
+Jinja2==2.11.3
 SQLAlchemy==1.3.16
 Werkzeug==2.2.3
 cloudinary==1.20.0
