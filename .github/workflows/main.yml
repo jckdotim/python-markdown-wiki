@@ -22,7 +22,7 @@ jobs:
         
     - name: Install dependencies
       run: |
-        pip freeze | xargs pip uninstall -y
+        if pip freeze | grep -v '^\-e' | grep -v '^\-f' | grep -v '^-e' | grep -v '^-f' | cut -d = -f 1 | xargs pip uninstall -y; then true; fi
         pip install -r requirements.txt
         pip install coveralls
         
