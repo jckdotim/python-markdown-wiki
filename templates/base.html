@@ -1,4 +1,4 @@
-{% if request.is_xhr == False %}
+{% if request.environ.get('HTTP_X_REQUESTED_WITH') != 'XMLHttpRequest' %}
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -67,7 +67,7 @@
               {% block body %}
               {{ topic.body|default('', true)|parse_link|safe|markdown }}
               {% endblock %}
-          {% if request.is_xhr == False %}
+          {% if request.environ.get('HTTP_X_REQUESTED_WITH') != 'XMLHttpRequest' %}
         </div>
       </div>
     </div>
