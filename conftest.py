@@ -3,14 +3,19 @@ from pytest import fixture, yield_fixture
 
 
 @fixture
-def fx_app_client():
+def fx_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///test.db"
-    return app.test_client()
+    yield app
+
+
+@fixture
+def fx_app_client(fx_app):
+    return fx_app.test_client()
 
 
 @yield_fixture
-def fx_db(fx_app_client):
-    with fx_app_client:
+def fx_db(fx_app):
+    with fx_app.app_context():
         db.create_all()
         yield db
 

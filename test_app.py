@@ -34,8 +34,7 @@ def test_redirect_to_readme(fx_app_client):
     with fx_app_client as app:
         assert app.get('/').location == url_for(
             'topic',
-            topic=Topic.find('README'),
-            _external=True
+            topic=Topic.find('README')
         )
 
 
@@ -43,8 +42,7 @@ def test_search(fx_app_client):
     with fx_app_client as app:
         assert app.get('/?topic=TEST').location == url_for(
             'topic',
-            topic=Topic.find('TEST'),
-            _external=True
+            topic=Topic.find('TEST')
         )
 
 
