@@ -33,6 +33,7 @@ jobs:
     - name: Run tests
       run: |
         coverage run --source=./ -m pytest
+        coverage-lcov --output_file_path ./coverage/lcov.info
         
     - name: Upload coverage data to Coveralls
       uses: coverallsapp/github-action@v1.1.2
