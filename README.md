@@ -1,5 +1,5 @@
 # Python Markdown Wiki for Heroku
-![ci workflow](https://github.com/jckdotim/python-markdown-wiki/actions/workflows/main.yml/badge.svg) [![Coverage Status](https://coveralls.io/repos/jckdotim/python-markdown-wiki/badge.svg?branch=master&service=github)](https://coveralls.io/github/jckdotim/python-markdown-wiki?branch=master)
+![ci workflow](https://github.com/jckdotim/python-markdown-wiki/actions/workflows/main.yml/badge.svg) [![codecov](https://codecov.io/github/jckdotim/python-markdown-wiki/branch/master/graph/badge.svg?token=2Qm2KC9w6J)](https://codecov.io/github/jckdotim/python-markdown-wiki)
 
 This is an [Wiki][2] that can use [Markdown][3] and supports [Heroku][1].
 
