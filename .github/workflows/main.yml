@@ -35,7 +35,7 @@ jobs:
         coverage report
         
     - name: Upload coverage data to Coveralls
-      uses: coverallsapp/github-action@v1.1.2
+      uses: coverallsapp/github-action@v1.2.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
       run: coveralls
