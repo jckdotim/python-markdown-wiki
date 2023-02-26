@@ -38,4 +38,3 @@ jobs:
       uses: coverallsapp/github-action@v1.2.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-      run: coveralls
