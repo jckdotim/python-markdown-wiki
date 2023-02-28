@@ -20,7 +20,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "cloudinary": "^1.14.0",
-    "css-loader": "^5.0.0",
+    "css-loader": "^6.0.0",
     "file-loader": "^6.0.0",
     "github-markdown-css": "^4.0.0",
     "inline-attachment": "^2.0.3",
