@@ -35,7 +35,7 @@
     <div class="container">
       <div class="row mt-3 mb-3">
         <div class="col-md-12">
-	    <h1 class="float-end">{{ topic.name }}</h1>
+      	    <h1 class="float-start">{{ topic.name }}</h1>
             <div class="float-end">
               {% block submenu %}
               <a class="btn btn-outline-primary" href="{{ url_for('edit', topic=topic) }}">Edit</a>
@@ -70,6 +70,10 @@
           {% if request.environ.get('HTTP_X_REQUESTED_WITH') != 'XMLHttpRequest' %}
         </div>
       </div>
+      <footer>
+        <hr>
+        <p>&copy; Wiki</p>
+      </footer>
     </div>
   </body>
   </html>
