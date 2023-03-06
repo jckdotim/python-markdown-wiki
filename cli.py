@@ -1,5 +1,5 @@
 import click
-from app import db
+from app import app, db
 
 
 @click.group()
@@ -9,12 +9,14 @@ def cli():
 
 @cli.command()
 def createdb():
-    db.create_all()
+    with app.app_context():
+        db.create_all()
 
 
 @cli.command()
 def dropdb():
-    db.drop_all()
+    with app.app_context():
+        db.drop_all()
 
 
 if __name__ == '__main__':
