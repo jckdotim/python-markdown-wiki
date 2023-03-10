@@ -3,14 +3,12 @@
 {% block body %}
 <form action="{{ url_for('topic', topic=topic) }}" method="POST">
 <fieldset>
-<div class="form-group">
-    <label for="textarea-content">Contents</label>
+<div class="mb-3">
+    <label for="textarea-content" class="form-label">Contents</label>
     <textarea name="body" class="form-control" id="textarea-content" rows="10">{{ topic.body|default('', true) }}</textarea>
 </div>
-<div class="actions">
-    <input type="submit" class="btn btn-primary btn-lg" value="Edit" />
-    <a href="{{ url_for('topic', topic=topic) }}" class="btn btn-secondary btn-lg">Return to topic</a>
-</div>
+<input type="submit" class="btn btn-primary" value="Edit" />
+<a href="{{ url_for('topic', topic=topic) }}" class="btn btn-outline-secondary">Return to topic</a>
 </fieldset>
 </form>
 {% endblock %}
