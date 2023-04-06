@@ -16,6 +16,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+def create_tables_if_not_exists():
+    engine = db.get_engine()
+    if not engine.dialect.has_table(engine, "topic"):
+        db.create_all()
+
+create_tables_if_not_exists()
+
 markdown = Markdown(app)
 
 
