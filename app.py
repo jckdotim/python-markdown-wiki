@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_gfm import Markdown
 from werkzeug.routing import BaseConverter
 from sqlalchemy.sql import func
+from sqlalchemy import inspect
 
 
 app = Flask(__name__)
@@ -19,9 +20,11 @@ db = SQLAlchemy(app)
 
 
 def create_tables_if_not_exists():
-    engine = db.get_engine()
-    if not engine.dialect.has_table(engine, "topic"):
-        db.create_all()
+    with app.app_context():
+        engine = db.get_engine()
+        inspector = inspect(engine)
+        if "topic" not in inspector.get_table_names():
+            db.create_all()
 
 
 create_tables_if_not_exists()
