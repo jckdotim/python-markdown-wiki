@@ -19,7 +19,7 @@
   "homepage": "https://github.com/jckdotim/python-markdown-wiki",
   "dependencies": {
     "bootstrap": "^5.0.0",
-    "cloudinary": "^1.14.0",
+    "cloudinary": "^2.0.0",
     "css-loader": "^6.0.0",
     "file-loader": "^6.0.0",
     "github-markdown-css": "^5.0.0",
